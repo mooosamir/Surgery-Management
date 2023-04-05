@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_integrate_tour_web_age_discounts,integrate_tour_web.age_discounts,model_integrate_tour_web_age_discounts,base.group_user,1,1,1,1

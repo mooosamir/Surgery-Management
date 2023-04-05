@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+
+     
+    <template id="package_views_1"  name="package ">
+        <div id="Cabecera" class="oe_structure"></div>
+
+        <t t-call="website.layout">
+            <xpath expr="//t [@t-call='website.navbar']" position="after">
+
+
+                <div class="container">
+					<div class="offers">
+
+						
+							<div class="row">
+								<div class="col-lg-1 temp_col"></div>
+								<div class="col-lg-11">
+									<input type="hidden" id="precioH" name="precio" value=""/>
+									<input type="hidden" id="locationH" name="location" value=""/>
+									<input type="hidden" id="hotelH" name="hotel" value=""/>
+									<input type="hidden" id="paginado" name="paginado" value="0"/>
+									
+									<!-- Offers Sorting -->
+									<div class="offers_sorting_container " >
+										<ul class="offers_sorting">
+											<li>
+												<span class="sorting_text">Precios</span>
+												<i class="fa fa-chevron-down"></i>
+												<ul >
+													<li  class="sort_btn allPrice" data-isotope-option='' data-parent=".price_sorting"><span>Mostrar Todos</span></li>
+													<li  class="sort_btn allPrice" data-isotope-option='price asc' data-parent=".price_sorting"><span>ASCENDENTE</span></li>
+													<li  class="sort_btn allPrice" data-isotope-option='price desc' data-parent=".price_sorting"><span>DESCENDENTE</span></li>
+												</ul>
+											</li>
+											<li>
+												<span class="sorting_text">Ubicacion</span>
+												<i class="fa fa-chevron-down"></i>
+												<ul class="ubicacion">
+													<t t-foreach="localizacion" t-as="location" t-if="localizacion">
+														<li class="sort_btn ubica" t-att-data-isotope-option='location.id'><span t-esc="location.name" /></li>
+
+													</t>
+													
+												</ul>
+											</li>
+											<li>
+												<span class="sorting_text">Hoteles</span>
+												<i class="fa fa-chevron-down"></i>
+												<ul class="hoteles">
+
+													<t t-foreach="hotel" t-as="h" t-if="hotel">
+														<li class="sort_btn hotel" t-att-data-isotope-option='h.id'><span t-esc="h.name" /></li>
+
+													</t>
+												</ul>
+											</li>
+											
+										</ul>
+									</div>
+								</div>
+
+								<div class="col-lg-11">
+									<!-- Offers Grid -->
+
+									<div class="offers_grid">
+
+										<div id="insert"></div>
+										
+									</div>
+									
+									
+
+								</div>
+
+
+							</div>
+							<br/>
+							 <div class="col-lg-12 ">
+							 	<div class="vermas">
+								 			<div id="load_more_button" class="button book_button"><a href="#">Ver Mas</a></div>
+											
+										</div>
+								</div>
+									
+							
+					</div>
+				</div>
+
+
+            </xpath>
+            <div id="wrapaa" class="oe_structure"></div>
+        </t>
+
+        
+    </template>
+    </data>
+</odoo>
